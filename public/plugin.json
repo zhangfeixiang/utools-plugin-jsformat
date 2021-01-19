@@ -1,0 +1,27 @@
+{
+  "pluginName": "jsformat",
+  "description": "格式化HTML，JS，CSS",
+  "author": "zhangfeixiang",
+  "homepage": "https://github.com/zhangfeixiang/utools-plugin-jsformat.git",
+  "main": "index.html",
+  "version": "1.0.0",
+  "logo": "logo.png",
+  "preload": "preload.js",
+  "features": [
+    {
+      "code": "jsformat",
+      "explain": "格式化代码",
+      "cmds": [
+        "js",
+        "html",
+        "css",
+        "format",
+        {
+          "type": "files",
+          "label": "格式化代码",
+          "match": "/\\.(html|css|js)$/i"
+        }
+      ]
+    }
+  ]
+}
