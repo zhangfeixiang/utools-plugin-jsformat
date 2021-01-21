@@ -1,6 +1,5 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
-const { VueLoaderPlugin } = require('vue-loader');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
@@ -10,7 +9,7 @@ module.exports = {
   },
   devtool: process.env.NODE_ENV === 'production' ? 'source-map' : false,
   target: 'node',
-  plugins: [new CleanWebpackPlugin(), new VueLoaderPlugin(), new CopyPlugin({ patterns: [{ from: 'public' }, { from: 'README.md' }] })],
+  plugins: [new CleanWebpackPlugin(),  new CopyPlugin({ patterns: [{ from: 'public' }, { from: 'README.md' }] })],
   resolve: {
     extensions: ['.js', '.ts', '.json'],
     alias: { '@': path.join(__dirname, 'src') }
@@ -22,26 +21,6 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader']
       },
-      {
-        test: /\.css$/,
-        use: ['vue-style-loader', 'style-loader', 'css-loader']
-      },
-      {
-        test: /\.(jpg|png|svg|gif)$/,
-        use: ['file-loader']
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ['file-loader']
-      },
-      {
-        test: /\.vue$/,
-        use: [{ loader: 'vue-loader', options: { optimizeSSR: false } }]
-      },
-      {
-        test: /\.stylus$/,
-        use: ['style-loader', 'css-loader', 'stylus-loader']
-      }
     ]
   },
   output: {
