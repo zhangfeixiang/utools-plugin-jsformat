@@ -6,9 +6,9 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './src/main.js',
     preload: './src/preload/index.js'
   },
+  devtool: process.env.NODE_ENV === 'production' ? 'source-map' : false,
   target: 'node',
   plugins: [new CleanWebpackPlugin(), new VueLoaderPlugin(), new CopyPlugin({ patterns: [{ from: 'public' }, { from: 'README.md' }] })],
   resolve: {
@@ -49,6 +49,5 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   optimization: {
-    minimizer: [new TerserPlugin({ exclude: /preload\.js/ })]
   }
 };

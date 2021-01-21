@@ -1,12 +1,12 @@
 {
-  "name": "utools-plugin-format",
+  "name": "utools-plugin-jsformat",
   "version": "1.0.0",
   "description": "html js css 格式化插件",
   "scripts": {
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production"
   },
-  "author": "csj8520",
+  "author": "zhangfeixiang",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.12.1",
@@ -21,6 +21,7 @@
     "copy-webpack-plugin": "^6.2.1",
     "css-loader": "^5.0.0",
     "file-loader": "^6.1.1",
+    "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
     "stylus": "^0.54.8",
     "stylus-loader": "^4.1.1",
@@ -33,6 +34,7 @@
     "webpack-cli": "^4.0.0"
   },
   "dependencies": {
+    "js-beautify": "^1.13.4",
     "vue": "^2.6.12"
   }
 }

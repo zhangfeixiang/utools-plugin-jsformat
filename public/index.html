@@ -3,10 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="_.css">
     <title>js html css -format</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script src="./app.js"></script>
+    <div class="app">
+      <div id="js_edit" class="container" role="main">
+        <pre class="editor" data-editor-lang="js"></pre>
+      </div>
+      <div class="footer">
+        <div class="button danger" id="clear">清空内容</div>
+        <div class="button primary" id="format">格式化</div>
+        <div class="button success" id="copy">复制内容</div>
+      </div>
+    </div>
+    <script data-main="init" src="_.js"></script>
   </body>
 </html>
